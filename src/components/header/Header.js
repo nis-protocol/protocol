@@ -3,6 +3,8 @@ import { Layout, Row, Col, Button } from 'antd';
 import './header.scss';
 import { globalProps } from '../../data/props';
 import {NavLink} from 'react-router-dom';
+import User from './user/User';
+import logo from '../../assets/images/logo.png';
 
 const { Header } = Layout;
 
@@ -16,17 +18,15 @@ class HeaderComponent extends Component {
             <Row {...globalProps.row} className="menu">
                     <Col {...globalProps.col} className="logo">
                         <h1>
-                            <img src={"https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"} height={32}/>
-                            <span>Compound</span>
+                            <img src={logo}/>
+                            <span>NISProject</span>
                         </h1>
                     </Col>
                     <Col {...globalProps.col} className="dashboard-vote">
                         <NavLink to="/" activeClassName="style-active-navlink" exact className="btn-dashboard">Dashboard</NavLink>
                         <NavLink to="/vote" activeClassName="style-active-navlink" className="btn-vote">Vote</NavLink>
                     </Col>
-                    <Col {...globalProps.col} className="button-user">
-                        <Button>Oxac...D8C7</Button>
-                    </Col>
+                    <User/>
                 </Row>
             </div>
         );

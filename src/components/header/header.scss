@@ -16,8 +16,15 @@
 
     // logo
     .logo {
+
+        img {
+            margin-bottom: 3px;
+            height: 32px;
+        }
+
         span {
             color: $color-white;
+            margin-left: 10px;
         }
     }
     // dashboard and vote
@@ -60,3 +67,73 @@
         }
     }
 }
+
+// drawer
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 500px !important;
+
+        // header
+        .header-drawer {
+            margin-top: 30px;
+            text-align: center;
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                margin-top: 18px;
+                margin-bottom: 10px;
+                color: $color-btn-user;
+            }
+            h1 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color-text-footer;
+            }
+        }
+
+        // body
+        .body-drawer {
+
+            .btn-body {
+                position: relative;
+                height: 100px;
+                border-bottom: 0.5px solid $border-botton-user;
+                border-radius: 2px;
+                transition: box-shadow 0.3s ease-in-out;
+                align-items: center;
+                line-height: 100px;
+                padding: 0 30px;
+
+                img {
+                    margin-bottom: 6px;
+                }
+                .coin-name {
+                    font-size: 18px;
+                    color: $color-btn-user;
+                    margin-left: 20px;
+                }
+                i {
+                    position: absolute;
+                    top: 0px;
+                    right: 30px;
+                    font-size: 30px;
+                }
+            }
+            .btn-body:hover {
+                box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        // footer
+        .footer-drawer {
+            text-align: center;
+            color: $color-text-footer;
+            margin-top: 26px;
+            a:hover {
+                border-bottom: 0.5px solid #096dd9;
+            }
+        }
+    }
