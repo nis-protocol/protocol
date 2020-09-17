@@ -1,0 +1,62 @@
+@import '../../assets/Style.scss';
+
+.header {
+    width: 100%;
+    text-align: center;
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: $backg-color-header;
+}
+
+.menu {
+    background-color: $backg-color-header;
+    color: $color-white;
+    padding: 20px 50px;
+
+    // logo
+    .logo {
+        span {
+            color: $color-white;
+        }
+    }
+    // dashboard and vote
+    .dashboard-vote {
+        text-align: center;
+        a {
+            color: $color-white;
+            padding-bottom: 4px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-dashboard {
+            margin-right: 10px;
+        }
+        .btn-vote {
+            margin-left: 10px;
+        }
+        a:hover {
+            color: $color-text-blue;
+            border-bottom: 1px solid $color-text-blue;
+        }
+
+        .style-active-navlink {
+            color: $color-text-blue;
+            border-bottom: 1px solid $color-text-blue;
+        }
+    }
+    // button user
+    .button-user {
+        text-align: end;
+        .ant-btn {
+            background-color: $color-btn-user;
+            border: none;
+            color: $color-white;
+            font-size: 12px;
+        }
+        .ant-btn:hover {
+            color: $color-text-blue;
+        }
+    }
+}

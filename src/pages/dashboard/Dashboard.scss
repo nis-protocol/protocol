@@ -1,0 +1,76 @@
+@import '../../assets/Style.scss';
+
+.dashboard {
+    background-color: $backg-color-content;
+    
+// sumary
+.style-sumary {
+    z-index: 1;
+    .sumary {
+        background-color: $backg-color-header;
+        color: $color-white;
+        text-align: center;
+        height: 200px;
+        p {
+            font-size: 14px;
+        }
+        h1 {
+            color: $color-white;
+        }
+        .price-total {
+            color: $color-text-blue;
+        }
+        .price-use {
+            color: $color-text-purple;
+        }
+        .price-surplus {
+            color: $color-text-red;
+        }
+    }
+}
+
+// content table
+.table-dashboard {
+    padding: 0 50px;
+    z-index: 2;
+    top: -65px;
+    margin-bottom: -40px;
+    position: relative;
+
+    // title
+    .site-page-header {
+        border-bottom: 1px solid rgb(235, 237, 240);
+        background-color: $color-white;
+        box-shadow: 0px 2px 4px rgba(16, 21, 24, 0.05);
+        padding: 12px 13px;
+        font-size: 18px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    // content
+    .ant-table-wrapper {
+        box-shadow: 0px 2px 4px rgba(16, 21, 24, 0.05);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        th.ant-table-cell.ant-table-cell-ellipsis {
+            background-color: $color-white;
+            color: $color-text-footer;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        td.ant-table-cell.ant-table-cell-ellipsis {
+            font-weight: 600;
+            font-size: 16px;
+            color: $color-td-table;
+            border-bottom-left-radius: 5px;
+        }
+    
+        .ant-pagination {
+            display: none;
+        }
+    }
+}
+}

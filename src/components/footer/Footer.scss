@@ -1,0 +1,54 @@
+@import '../../assets/Style.scss';
+
+.footer {
+    padding: 6px 50px;
+    background-color: $backg-color-content;
+    border-top: 1px solid #CCD6DD;
+}
+
+// footer left
+.footer-left {
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    span {
+        margin-left: 20px;
+        color: $color-text-footer;
+        a {
+            color: $color-text-footer;
+        }
+    }
+}
+.footer-left::before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: $color-text-blue;
+    border-radius: 100%;
+    top: 3px;
+}
+
+// footer right
+.footer-right {
+    text-align: end;
+    // price
+    .price {
+        border: -0.5px solid #eff0f1;
+        color: $color-text-footer;
+        text-align: center;
+        border-radius: 5px;
+        margin-right: 20px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    // language
+    .language {
+        color: $color-text-footer;
+        border: -0.5px solid #eff0f1;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
