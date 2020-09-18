@@ -57,13 +57,21 @@ export const globalProps = {
         sm: 3,
         xs: 24
     },
+    col5: {
+        xxl: 6,
+        xl: 6,
+        lg: 6,
+        md: 6,
+        sm: 6,
+        xs: 24
+    },
     col6: {
         xxl: 6,
         xl: 6,
         lg: 6,
         md: 6,
         sm: 6,
-        xs: 8
+        xs: 12
     },
     colHalf: {
         xxl: 12,

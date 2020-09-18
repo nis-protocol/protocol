@@ -8,6 +8,7 @@
     font-weight: 600;
     background-color: $backg-color-header;
     padding: 0;
+    border-bottom: 1px solid #000000;
 }
 
 .menu {
@@ -174,6 +175,12 @@
         .dashboard-vote {
             text-align: start;
             padding-top: 4px;
+            .btn-dashboard {
+                font-size: 14px;
+            }
+            .btn-vote {
+                font-size: 14px;
+            }
         }
         // button user
         .button-user {
@@ -182,9 +189,9 @@
     }
 
     // drawer
-.ant-drawer-right .ant-drawer-content-wrapper {
-    width: 429px !important;
-}
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 429px !important;
+    }
 } 
 
 @media screen and (max-width: 575px) {
@@ -216,16 +223,16 @@
     }
 
     // drawer
-.ant-drawer-right .ant-drawer-content-wrapper {
-    width: 429px !important;
-}
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 429px !important;
+    }
 } 
 
 @media screen and (max-width: 414px) {
     // drawer
-.ant-drawer-right .ant-drawer-content-wrapper {
-    width: 378px !important;
-    }   
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 378px !important;
+        }   
 } 
 
 @media screen and (max-width: 320px) {

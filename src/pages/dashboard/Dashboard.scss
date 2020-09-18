@@ -128,3 +128,28 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 575px) {
+    // sumary
+    .style-sumary {
+        .sumary {
+            height: 294px !important;
+
+            .content-empty {
+                display: none;
+            }
+
+            .price-total {
+                margin-bottom: -33px;
+                margin-top: 17px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+            h1 {
+                font-size: 19px;
+            }
+        }
+    }
+} 

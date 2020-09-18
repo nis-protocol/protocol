@@ -6,8 +6,8 @@ class Sumary extends Component {
     render() {
         return (
             <Row {...globalProps.row} className="sumary">
-                <Col {...globalProps.col4}></Col>
-                <Col {...globalProps.col6} className="price-total">
+                <Col {...globalProps.col4} className="content-empty"></Col>
+                <Col {...globalProps.col5} className="price-total">
                     <p>Supply Balance</p>
                     <h1>$256.2398239</h1>
                 </Col>
