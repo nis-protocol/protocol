@@ -37,6 +37,9 @@ class User extends Component {
                     onClose={this.onClose}
                     visible={visible}
                 >
+                    <div>
+                        <Button className="btn-onclose" onClick={this.onClose}>X</Button>
+                    </div>
                     <div className="header-drawer">
                         <img src={logo} />
                         <p>Connect Wallet</p>

@@ -16,7 +16,7 @@ class HeaderComponent extends Component {
                     Note. You are curently connected to the Rinkeby Testhet
             </Header>
             <Row {...globalProps.row} className="menu">
-                    <Col {...globalProps.col} className="logo">
+                    <Col {...globalProps.col1} className="logo">
                         <h1>
                             <img src={logo}/>
                             <span>NISProject</span>

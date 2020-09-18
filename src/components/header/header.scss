@@ -69,12 +69,18 @@
 }
 
 // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
-        width: 500px !important;
+.ant-drawer-right .ant-drawer-content-wrapper {
+    width: 500px !important;
 
-        // header
+    // header
+    .ant-drawer-body {
+        padding: 16px;
+        .btn-onclose {
+            border: none;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
         .header-drawer {
-            margin-top: 30px;
             text-align: center;
             img {
                 width: 100px;
@@ -93,47 +99,81 @@
                 color: $color-text-footer;
             }
         }
+    }
 
-        // body
-        .body-drawer {
+    // body
+    .body-drawer {
 
-            .btn-body {
-                position: relative;
-                height: 100px;
-                border-bottom: 0.5px solid $border-botton-user;
-                border-radius: 2px;
-                transition: box-shadow 0.3s ease-in-out;
-                align-items: center;
-                line-height: 100px;
-                padding: 0 30px;
+        .btn-body {
+            position: relative;
+            height: 100px;
+            border-bottom: 0.5px solid $border-botton-user;
+            border-radius: 2px;
+            transition: box-shadow 0.3s ease-in-out;
+            align-items: center;
+            line-height: 100px;
+            padding: 0 30px;
 
-                img {
-                    margin-bottom: 6px;
-                }
-                .coin-name {
-                    font-size: 18px;
-                    color: $color-btn-user;
-                    margin-left: 20px;
-                }
-                i {
-                    position: absolute;
-                    top: 0px;
-                    right: 30px;
-                    font-size: 30px;
-                }
+            img {
+                margin-bottom: 6px;
             }
-            .btn-body:hover {
-                box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+            .coin-name {
+                font-size: 18px;
+                color: $color-btn-user;
+                margin-left: 20px;
+            }
+            i {
+                position: absolute;
+                top: 0px;
+                right: 30px;
+                font-size: 30px;
             }
         }
-
-        // footer
-        .footer-drawer {
-            text-align: center;
-            color: $color-text-footer;
-            margin-top: 26px;
-            a:hover {
-                border-bottom: 0.5px solid #096dd9;
-            }
+        .btn-body:hover {
+            box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
         }
     }
+
+    // footer
+    .footer-drawer {
+        text-align: center;
+        color: $color-text-footer;
+        margin-top: 26px;
+        a:hover {
+            border-bottom: 0.5px solid #096dd9;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    // menu
+    .menu {
+        padding: 20px 20px;
+    }
+} 
+
+@media screen and (max-width: 575px) {
+    // header
+    .header {
+        font-size: 13px;
+    }
+    // menu
+    .menu {
+        background-color: $backg-color-header;
+        color: $color-white;
+        padding: 20px 20px;
+    
+        // logo
+        .logo {
+            text-align: center;
+        }
+        // dashboard and vote
+        .dashboard-vote {
+            text-align: start;
+        }
+        // button user
+        .button-user {
+            text-align: end;
+        }
+    }
+} 

@@ -23,25 +23,20 @@ export const globalProps = {
         ellipsis: true,
         width: 200
     },
-    col4: {
-        xxl: 3,
-        xl: 3,
-        lg: 3,
-        md: 24,
-        xs: 24
-    },
-    col6: {
-        xxl: 6,
-        xl: 6,
-        lg: 6,
-        md: 6,
-        xs: 24
-    },
     col: {
         xxl: 8,
         xl: 8,
         lg: 8,
         md: 8,
+        sm:8,
+        xs: 12
+    },
+    col1: {
+        xxl: 8,
+        xl: 8,
+        lg: 8,
+        md: 8,
+        sm:8,
         xs: 24
     },
     col2: {
@@ -53,6 +48,22 @@ export const globalProps = {
     },
     col3: {
         span: 24
+    },
+    col4: {
+        xxl: 3,
+        xl: 3,
+        lg: 3,
+        md: 3,
+        sm: 3,
+        xs: 24
+    },
+    col6: {
+        xxl: 6,
+        xl: 6,
+        lg: 6,
+        md: 6,
+        sm: 6,
+        xs: 8
     },
     colHalf: {
         xxl: 12,

@@ -71,6 +71,60 @@
         .ant-pagination {
             display: none;
         }
+
+        .ant-table-tbody {
+            tr:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
+}
+
+// modal supply
+.modal-supply {
+    .ant-modal-header {
+        text-align: center;
+        img {
+            height: 36px;
+            margin-bottom: 6px;
+        }
+        span {
+            font-size: 19px;
+            color: $color-btn-user;
+        }
+    }
+
+    .ant-modal-body {
+        p {
+            color: $color-title-popup;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .ant-input-affix-wrapper {
+            border: none;
+            border-bottom: 1px solid $border-botton-user;
+            padding: 5px 0px 13px 0px;
+            img {
+                height: 36px;
+            }
+            .ant-input:placeholder-shown {
+                font-size: 17px;
+            }
+        }
+        .ant-input-affix-wrapper-focused{
+            border-bottom: 1px solid $border-botton-user;
+            box-shadow: none;
+        }
+        .ant-btn {
+            width: 100%;
+            font-weight: 600;
+            margin-top: 25px;
+            height: 47px;
+        }
+    }
+
+    .ant-modal-footer {
+        display: none;
+    }
 }
