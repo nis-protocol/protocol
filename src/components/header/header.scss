@@ -7,6 +7,7 @@
     font-size: 15px;
     font-weight: 600;
     background-color: $backg-color-header;
+    padding: 0;
 }
 
 .menu {
@@ -159,21 +160,128 @@
     }
     // menu
     .menu {
-        background-color: $backg-color-header;
-        color: $color-white;
         padding: 20px 20px;
     
         // logo
         .logo {
             text-align: center;
+            margin-bottom: 10px;
+            span {
+                font-size: 19px;
+            }
         }
         // dashboard and vote
         .dashboard-vote {
             text-align: start;
+            padding-top: 4px;
         }
         // button user
         .button-user {
             text-align: end;
         }
     }
+
+    // drawer
+.ant-drawer-right .ant-drawer-content-wrapper {
+    width: 429px !important;
+}
+} 
+
+@media screen and (max-width: 575px) {
+    // header
+    .header {
+        font-size: 13px;
+    }
+    // menu
+    .menu {
+        padding: 20px 20px;
+    
+        // logo
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+            span {
+                font-size: 19px;
+            }
+        }
+        // dashboard and vote
+        .dashboard-vote {
+            text-align: start;
+            padding-top: 4px;
+        }
+        // button user
+        .button-user {
+            text-align: end;
+        }
+    }
+
+    // drawer
+.ant-drawer-right .ant-drawer-content-wrapper {
+    width: 429px !important;
+}
+} 
+
+@media screen and (max-width: 414px) {
+    // drawer
+.ant-drawer-right .ant-drawer-content-wrapper {
+    width: 378px !important;
+    }   
+} 
+
+@media screen and (max-width: 320px) {
+
+     // header
+     .header {
+        font-size: 10px;
+    }
+    // menu
+    .menu {
+        padding: 12px 10px;
+    }
+
+    // drawer
+.ant-drawer-right .ant-drawer-content-wrapper {
+    width: 300px !important;
+
+    // header
+    .ant-drawer-body {
+        padding: 8px;
+        .header-drawer {
+            img {
+                width: 70px;
+                height: 70px;
+            }
+            p {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // body
+    .body-drawer {
+
+        .btn-body {
+            height: 80px;
+            line-height: 80px;
+            padding: 0 8px;
+
+            .coin-name {
+                font-size: 16px;
+                font-weight: 600;
+                margin-left: 9px;
+            }
+            i {
+                font-size: 25px;
+            }
+        }
+    }
+
+    // footer
+    .footer-drawer {
+        font-size: 11px;
+    }
+}
 } 

@@ -4,3 +4,9 @@ body {
   font-family: 'Haas Grot Text R', sans-serif;
   overflow-x: hidden;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+} 
