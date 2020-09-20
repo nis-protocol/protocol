@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import './Dashboard.scss';
+import './ListBet.scss';
 import Sumary from './sumary/Sumary';
 import TableDashboard from './table/Table';
 
 const { Content } = Layout;
 
-class Dashboard extends Component {
+class ListBet extends Component {
     render() {
         return (
             <Content className="dashboard">
@@ -21,4 +21,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default ListBet;

@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import HeaderComponent from './components/header/Header';
 import { Layout } from 'antd';
 import FooterComponent from './components/footer/Footer';
-import Dashboard from './pages/dashboard/Dashboard';
+import ListBet from './pages/listBet/ListBet';
 import Vote from './pages/vote/Vote';
 import 'antd/dist/antd.css';
 import {
@@ -24,7 +24,7 @@ class App extends Component {
               <Vote />
             </Route>
             <Route path="/">
-              <Dashboard />
+              <ListBet />
             </Route>
           </Switch>
           

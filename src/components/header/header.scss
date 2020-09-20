@@ -14,7 +14,7 @@
 .menu {
     background-color: $backg-color-header;
     color: $color-white;
-    padding: 20px 50px;
+    padding: 20px 33px;
 
     // logo
     .logo {
@@ -41,6 +41,9 @@
 
         .btn-dashboard {
             margin-right: 10px;
+        }
+        .btn-mybet {
+            margin: 0 10px;
         }
         .btn-vote {
             margin-left: 10px;
@@ -154,43 +157,16 @@
     }
 } 
 
-@media screen and (max-width: 575px) {
-    // header
-    .header {
-        font-size: 13px;
-    }
+@media screen and (max-width: 767px) {
     // menu
     .menu {
-        padding: 20px 20px;
-    
-        // logo
         .logo {
             text-align: center;
-            margin-bottom: 10px;
-            span {
-                font-size: 19px;
-            }
         }
-        // dashboard and vote
+
         .dashboard-vote {
             text-align: start;
-            padding-top: 4px;
-            .btn-dashboard {
-                font-size: 14px;
-            }
-            .btn-vote {
-                font-size: 14px;
-            }
         }
-        // button user
-        .button-user {
-            text-align: end;
-        }
-    }
-
-    // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
-        width: 429px !important;
     }
 } 
 
@@ -215,6 +191,9 @@
         .dashboard-vote {
             text-align: start;
             padding-top: 4px;
+            a {
+                font-size: 14px;
+            }
         }
         // button user
         .button-user {
@@ -232,7 +211,36 @@
     // drawer
     .ant-drawer-right .ant-drawer-content-wrapper {
         width: 378px !important;
-        }   
+    }
+    
+    // menu
+    .menu {
+        padding: 20px 10px;
+    }
+    
+} 
+
+@media screen and (max-width: 375px) {
+    // menu
+    .menu {
+        padding: 12px 10px;
+        // dashboard and vote
+        .dashboard-vote {
+            a {
+                font-size: 13px;
+            }
+
+            .btn-dashboard {
+                margin-right: 8px;
+            }
+            .btn-mybet {
+                margin: 0 7px;
+            }
+            .btn-vote {
+                margin-left: 6px;
+            }
+        }
+    }
 } 
 
 @media screen and (max-width: 320px) {
@@ -244,6 +252,22 @@
     // menu
     .menu {
         padding: 12px 10px;
+        // dashboard and vote
+        .dashboard-vote {
+            a {
+                font-size: 12px;
+            }
+
+            .btn-dashboard {
+                margin-right: 7px;
+            }
+            .btn-mybet {
+                margin: 0 2px;
+            }
+            .btn-vote {
+                margin-left: 6px;
+            }
+        }
     }
 
     // drawer

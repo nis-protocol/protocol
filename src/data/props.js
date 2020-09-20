@@ -23,12 +23,28 @@ export const globalProps = {
         ellipsis: true,
         width: 200
     },
+    col9: {
+        xxl: 8,
+        xl: 8,
+        lg: 8,
+        md: 8,
+        sm:6,
+        xs: 6
+    },
+    col10: {
+        xxl: 8,
+        xl: 8,
+        lg: 8,
+        md: 8,
+        sm:16,
+        xs: 16
+    },
     col: {
         xxl: 8,
         xl: 8,
         lg: 8,
         md: 8,
-        sm:8,
+        sm:12,
         xs: 12
     },
     col1: {
@@ -36,7 +52,7 @@ export const globalProps = {
         xl: 8,
         lg: 8,
         md: 8,
-        sm:8,
+        sm:24,
         xs: 24
     },
     col2: {
@@ -72,6 +88,22 @@ export const globalProps = {
         md: 6,
         sm: 6,
         xs: 12
+    },
+    col7: {
+        xxl: 4,
+        xl: 4,
+        lg: 2,
+        md: 24,
+        sm: 24,
+        xs: 24
+    },
+    col8: {
+        xxl: 16,
+        xl: 16,
+        lg: 20,
+        md: 24,
+        sm: 24,
+        xs: 24
     },
     colHalf: {
         xxl: 12,

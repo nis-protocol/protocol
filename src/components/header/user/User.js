@@ -29,7 +29,7 @@ class User extends Component {
     render() {
         let { visible } = this.state;
         return (
-            <Col {...globalProps.col} className="button-user">
+            <Col {...globalProps.col9} className="button-user">
                 <Button onClick={this.showDrawer}>Oxac...D8C7</Button>
                 <Drawer
                     placement="right"

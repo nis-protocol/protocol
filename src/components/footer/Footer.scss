@@ -1,7 +1,7 @@
 @import '../../assets/Style.scss';
 
 .footer {
-    padding: 6px 50px;
+    padding: 6px 33px;
     background-color: $backg-color-content;
     border-top: 1px solid #CCD6DD;
 }
@@ -11,6 +11,7 @@
     position: relative;
     font-size: 12px;
     font-weight: 600;
+    margin-top: 5px;
     span {
         margin-left: 20px;
         color: $color-text-footer;
@@ -26,7 +27,7 @@
     width: 10px;
     background-color: $color-text-blue;
     border-radius: 100%;
-    top: 3px;
+    top: 4px;
 }
 
 // footer right

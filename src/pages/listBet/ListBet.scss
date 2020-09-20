@@ -31,7 +31,7 @@
 
 // content table
 .table-dashboard {
-    padding: 0 50px;
+    padding: 0 33px;
     z-index: 2;
     top: -65px;
     margin-bottom: -40px;
@@ -59,22 +59,58 @@
             color: $color-text-footer;
             font-weight: 600;
             font-size: 12px;
+            text-align: end;
         }
 
         td.ant-table-cell.ant-table-cell-ellipsis {
-            font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             color: $color-td-table;
             border-bottom-left-radius: 5px;
+            text-align: end;
         }
-    
-        .ant-pagination {
-            display: none;
+
+        .ant-table-thead {
+            .ant-pagination {
+                display: none;
+            }
+
+            // col name
+            th.ant-table-cell.style-col-name {
+                text-align: start ;
+            }
         }
 
         .ant-table-tbody {
             tr:hover {
                 cursor: pointer;
+            }
+            .style-col-name {
+                text-align: start !important;
+                text-transform: capitalize;
+                span {
+                    margin-left: 10px;
+                }
+            }
+            // col my bet
+            .style-col-my-bet {
+                text-transform: uppercase;
+                text-align: end;
+            }
+            // col option
+            .col-option {
+                .ant-btn {
+                    background-size: 200% auto;
+                    background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+                    background-image: linear-gradient(to right, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+                    border: 0;
+                    border-radius: 20px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+                .ant-btn:hover {
+                    background-position: right center; 
+                }
             }
         }
     }
@@ -129,11 +165,20 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+    // content table
+    .dashboard {
+        .table-dashboard {
+                padding: 0 20px;
+            }
+    }
+} 
+
 @media screen and (max-width: 575px) {
     // sumary
     .style-sumary {
         .sumary {
-            height: 294px !important;
+            height: 170px !important;
 
             .content-empty {
                 display: none;
@@ -141,7 +186,7 @@
 
             .price-total {
                 margin-bottom: -33px;
-                margin-top: 17px;
+                // margin-top: 17px;
             }
 
             p {
@@ -151,5 +196,14 @@
                 font-size: 19px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 414px) {
+     // content table
+     .dashboard {
+        .table-dashboard {
+                padding: 0 10px;
+            }
     }
 } 
