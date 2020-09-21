@@ -1,6 +1,6 @@
 @import '../../assets/Style.scss';
 
-.dashboard {
+.my-bet {
     background-color: $backg-color-content;
     
 // sumary
@@ -19,6 +19,9 @@
         }
         .price-total {
             color: $color-text-blue;
+        }
+        .win-total {
+            color: $color-text-yellow;
         }
     }
 }
@@ -164,7 +167,7 @@
             border: 0;
             border-radius: 34px;
             span {
-                font-size: 18px;
+                font-size: 12px;
             }
         }
         .ant-btn:hover {
@@ -179,16 +182,19 @@
 
 @media screen and (max-width: 767px) {
     // content table
-    .dashboard {
+    .my-bet {
         // sumary
         .style-sumary {
             .sumary {
+                .style-col4 {
+                    display: none;
+                }
                 .price-total {
                     padding-top: 19px;
                 }
             }
         }
-
+        
         .table-dashboard {
                 padding: 0 20px;
                 .col-time-bet, .col-time-end {
@@ -222,7 +228,7 @@
         }
     }
     // content table
-    .dashboard {
+    .my-bet {
         .table-dashboard {
                 .col-status {
                     display: none;
@@ -231,15 +237,28 @@
     }
 }
 
+@media screen and (max-width: 480px) {
+    // content table
+    .my-bet {
+       .table-dashboard {
+               .ant-table-wrapper {
+                   td.ant-table-cell.ant-table-cell-ellipsis {
+                       max-width: 213px;
+                   }
+               }
+           }
+   }
+}
+
 @media screen and (max-width: 414px) {
      // content table
-     .dashboard {
+     .my-bet {
         .table-dashboard {
                 padding: 0 10px;
                 .ant-table-wrapper {
             
                     td.ant-table-cell.ant-table-cell-ellipsis {
-                        max-width: 184px;
+                        max-width: 164px;
                     }
             
                     .ant-table-tbody {
@@ -264,12 +283,12 @@
 
 @media screen and (max-width: 375px) {
     // content table
-    .dashboard {
+    .my-bet {
        .table-dashboard {
                .ant-table-wrapper {
            
                    td.ant-table-cell.ant-table-cell-ellipsis {
-                       max-width: 133px;
+                       max-width: 113px;
                    }
                }
            }
@@ -278,14 +297,14 @@
 
 @media screen and (max-width: 320px) {
     // content table
-    .dashboard {
+    .my-bet {
        .table-dashboard {
                padding: 0 10px;
                .ant-table-wrapper {
            
                    td.ant-table-cell.ant-table-cell-ellipsis {
                        font-size: 12px;
-                       max-width: 113px;
+                       max-width: 100px;
                    }
            
                    .ant-table-tbody {
