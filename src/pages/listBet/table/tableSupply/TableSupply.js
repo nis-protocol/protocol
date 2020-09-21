@@ -116,9 +116,9 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    {/* <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet"/>
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" /> */}
-                    {/* <Column {...globalProps.tableRow} title="Status" dataIndex="status" /> */}
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet"/>
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end"/>
+                    <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status"/>
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
                         render={() => <Button type="primary" >Bet <ArrowRightOutlined/></Button>}
                     />
