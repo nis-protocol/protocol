@@ -15,20 +15,7 @@
     background-color: $backg-color-header;
     color: $color-white;
     padding: 20px 33px;
-
-    // logo
-    .logo {
-
-        img {
-            margin-bottom: 3px;
-            height: 32px;
-        }
-
-        span {
-            color: $color-white;
-            margin-left: 10px;
-        }
-    }
+    
     // dashboard and vote
     .dashboard-vote {
         text-align: center;
@@ -221,6 +208,15 @@
 } 
 
 @media screen and (max-width: 375px) {
+    // drawer
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 348px !important;
+        // footer
+        .footer-drawer {
+            font-size: 12px;
+        }   
+    }
+
     // menu
     .menu {
         padding: 12px 10px;
@@ -271,48 +267,48 @@
     }
 
     // drawer
-.ant-drawer-right .ant-drawer-content-wrapper {
-    width: 300px !important;
+    .ant-drawer-right .ant-drawer-content-wrapper {
+        width: 300px !important;
 
-    // header
-    .ant-drawer-body {
-        padding: 8px;
-        .header-drawer {
-            img {
-                width: 70px;
-                height: 70px;
-            }
-            p {
-                font-size: 16px;
-            }
-            h1 {
-                font-size: 16px;
-            }
-        }
-    }
-
-    // body
-    .body-drawer {
-
-        .btn-body {
-            height: 80px;
-            line-height: 80px;
-            padding: 0 8px;
-
-            .coin-name {
-                font-size: 16px;
-                font-weight: 600;
-                margin-left: 9px;
-            }
-            i {
-                font-size: 25px;
+        // header
+        .ant-drawer-body {
+            padding: 8px;
+            .header-drawer {
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+                p {
+                    font-size: 16px;
+                }
+                h1 {
+                    font-size: 16px;
+                }
             }
         }
-    }
 
-    // footer
-    .footer-drawer {
-        font-size: 11px;
+        // body
+        .body-drawer {
+
+            .btn-body {
+                height: 80px;
+                line-height: 80px;
+                padding: 0 8px;
+
+                .coin-name {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-left: 9px;
+                }
+                i {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        // footer
+        .footer-drawer {
+            font-size: 11px;
+        }
     }
-}
 } 

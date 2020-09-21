@@ -19,7 +19,6 @@ class HeaderComponent extends Component {
                     <Col {...globalProps.col1} className="logo">
                         <h1>
                             <img src={logo}/>
-                            <span>NIS</span>
                         </h1>
                     </Col>
                     <Col {...globalProps.col10} className="dashboard-vote">

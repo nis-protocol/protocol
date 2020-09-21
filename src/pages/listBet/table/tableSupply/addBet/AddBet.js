@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Modal, Button, Input, Form, Select, DatePicker, InputNumber, Radio } from 'antd';
 import './AddBet.scss';
 import { globalProps, rules } from '../../../../../data';
+import logoDai from '../../../../../assets/images/logo-dai.png';
+import logoEth from '../../../../../assets/images/logo-eth.png';
+import logoUsd from '../../../../../assets/images/logo-usd.png';
+import {PlusOutlined } from '@ant-design/icons';
 
 const { RangePicker } = DatePicker;
 
@@ -31,7 +35,7 @@ class AddBet extends Component {
         let { showModal } = this.state;
         return (
             <div className="add-bet">
-                <Button type="primary" onClick={this.onShow}>Add Bet</Button>
+                <Button type="primary" onClick={this.onShow}><PlusOutlined/> Add Bet</Button>
                 <Modal
                     wrapClassName="modal-add-bet"
                     title="Add Bet infomation"
@@ -55,8 +59,10 @@ class AddBet extends Component {
                             name="tokens"
                             rules={[rules.required]}
                         >
-                            <Select>
-                                <Select.Option value="demo">Demo</Select.Option>
+                            <Select style={{width:"100%"}}>
+                                <Select.Option value="dai"><img src={logoDai} width={25} height={25} style={{marginBottom:"4px"}}/> Dai</Select.Option>
+                                <Select.Option value="eth"><img src={logoEth} width={25} height={25}/> Ether</Select.Option>
+                                <Select.Option value="usdc"><img src={logoUsd} width={25} height={25}/> USDT</Select.Option>
                             </Select>
                         </Form.Item>
                         <Form.Item
@@ -64,7 +70,7 @@ class AddBet extends Component {
                             name="maxBet"
                             rules={[rules.required]}
                         >
-                            <InputNumber style={{ width: "50%" }} />
+                            <InputNumber style={{ width: "100%" }} />
                         </Form.Item>
                         <Form.Item
                             label="Time" {...globalProps.formItem}

@@ -7,7 +7,7 @@ export const globalProps = {
         },
         // pagination: {
         //     showSizeChanger: true,
-        //     showTotal: sum => <div>{sum} <Translate id="ITEM" /></div>
+        //     showTotal: sum => <div>{sum} Item</div>
         // }
     },
     tableNoPagination: {
@@ -28,16 +28,16 @@ export const globalProps = {
         xl: 8,
         lg: 8,
         md: 8,
-        sm:6,
-        xs: 6
+        sm:10,
+        xs: 10
     },
     col10: {
         xxl: 8,
         xl: 8,
         lg: 8,
         md: 8,
-        sm:16,
-        xs: 16
+        sm:14,
+        xs: 14
     },
     col: {
         xxl: 8,

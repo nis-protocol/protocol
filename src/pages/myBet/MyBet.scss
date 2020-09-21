@@ -68,10 +68,6 @@
         }
 
         .ant-table-thead {
-            .ant-pagination {
-                display: none;
-            }
-
             // col name
             th.ant-table-cell.style-col-name {
                 text-align: start ;
@@ -205,30 +201,31 @@
 } 
 
 @media screen and (max-width: 575px) {
-    // sumary
-    .style-sumary {
-        .sumary {
-            height: 170px !important;
-
-            .content-empty {
-                display: none;
-            }
-
-            .price-total {
-                margin-bottom: -33px;
-                // margin-top: 17px;
-            }
-
-            p {
-                font-size: 13px;
-            }
-            h1 {
-                font-size: 19px;
-            }
-        }
-    }
     // content table
     .my-bet {
+        // sumary
+        .style-sumary {
+            .sumary {
+                height: 170px !important;
+
+                .content-empty {
+                    display: none;
+                }
+
+                .price-total {
+                    margin-bottom: -33px;
+                    padding-top: 11px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+                h1 {
+                    font-size: 19px;
+                }
+            }
+        }
+        
         .table-dashboard {
                 .col-status {
                     display: none;
