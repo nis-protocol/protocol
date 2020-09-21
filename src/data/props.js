@@ -118,6 +118,11 @@ export const globalProps = {
     formItem: {
         className: "custom-form-item"
     },
+    form: {
+        labelAlign: "right",
+        layout: "vertical",
+        scrollToFirstError: true
+      },
     content: {
             padding: '0 50px',
             marginTop: 64

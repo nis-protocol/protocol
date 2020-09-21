@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { globalProps } from '../../../../data/props';
-import { Col, Table, PageHeader, Modal, Input, Button } from 'antd';
+import { globalProps, rules } from '../../../../data';
+import { Table, PageHeader, Modal, Button, Form, Descriptions, Radio, Input } from 'antd';
 import logoBasic from '../../../../assets/images/logo-basic.png';
 import logoBtc from '../../../../assets/images/logo-btc.png';
 import logoDai from '../../../../assets/images/logo-dai.png';
@@ -9,6 +9,7 @@ import logoOx from '../../../../assets/images/logo-ox.png';
 import logoUsd from '../../../../assets/images/logo-usd.png';
 import logoUsdt from '../../../../assets/images/logo-usdt.png';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import AddBet from './addBet/AddBet';
 
 const { Column } = Table;
 
@@ -26,7 +27,7 @@ const data = [
         id: 2,
         name: "dai",
         logo: logoDai,
-        max_bet: "0 bat",
+        max_bet: "0 dai",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -35,7 +36,7 @@ const data = [
         id: 3,
         name: "ether",
         logo: logoEth,
-        max_bet: "0 bat",
+        max_bet: "0 eth",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -44,7 +45,7 @@ const data = [
         id: 4,
         name: "usd coin",
         logo: logoUsd,
-        max_bet: "0 bat",
+        max_bet: "0 usdc",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -53,7 +54,7 @@ const data = [
         id: 5,
         name: "compound usdt",
         logo: logoUsdt,
-        max_bet: "0 bat",
+        max_bet: "0 usdt",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -62,7 +63,7 @@ const data = [
         id: 6,
         name: "wrapped btv",
         logo: logoBtc,
-        max_bet: "0 bat",
+        max_bet: "0 wbtc",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -71,7 +72,7 @@ const data = [
         id: 7,
         name: "0x",
         logo: logoOx,
-        max_bet: "0 bat",
+        max_bet: "0 zrx",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -95,6 +96,10 @@ class TableSupply extends Component {
         this.setState({ showModal: false })
     }
 
+    onSubmit() {
+        this.setState({ showModal: false })
+    }
+
     render() {
         let { showModal } = this.state;
         return (
@@ -102,6 +107,7 @@ class TableSupply extends Component {
                 <PageHeader
                     className="site-page-header"
                     title="List Bet"
+                    extra={<AddBet />}
                 />
                 <Table
                     dataSource={data}
@@ -116,11 +122,11 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet"/>
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end"/>
-                    <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status"/>
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" />
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" />
+                    <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
-                        render={() => <Button type="primary" >Bet <ArrowRightOutlined/></Button>}
+                        render={() => <Button type="primary" >Bet <ArrowRightOutlined /></Button>}
                     />
                 </Table>
                 {/* modal */}
@@ -131,9 +137,34 @@ class TableSupply extends Component {
                     visible={showModal}
                     onCancel={this.onCloseModal}
                 >
-                    <p>Supply Rates</p>
-                    <Input prefix={<img src={logoUsd} />} suffix="1.01%" placeholder="Supply APY" />
-                    <Button type="primary">ENABLE</Button>
+                    <div className="time-info">
+                        <p><span>Time start:</span> 12/10/2020</p>
+                        <p><span>Time end:</span> 12/12/2020</p>
+                    </div>
+                    <Form
+                        {...globalProps.form}
+                        onFinish={e => this.onSubmit(e)}
+                    >
+                        <Form.Item
+                            label="Max Beet" {...globalProps.formItem}
+                            name="maxBet"
+                            rules={[rules.required]}
+                        >
+                            <Input style={{ width: "100%" }} addonAfter="USDC" />
+                        </Form.Item>
+                        <Form.Item
+                            name="radio-button"
+                            rules={[rules.required]}
+                        >
+                            <Radio.Group>
+                                <Radio value="a">Loose</Radio>
+                                <Radio value="b">Win</Radio>
+                            </Radio.Group>
+                        </Form.Item>
+                        <Form.Item >
+                            <Button type="primary" htmlType="submit" className="btn-submit">Apply</Button>
+                        </Form.Item>
+                    </Form>
                 </Modal>
             </div>
         );

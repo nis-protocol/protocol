@@ -4,3 +4,15 @@ body {
   font-family: 'Haas Grot Text R', sans-serif;
   overflow-x: hidden;
 }
+
+.ant-form-vertical .ant-form-item {
+  &.custom-form-item {
+    margin-bottom: 12px;
+    .ant-form-item-label {
+      padding-bottom: 0;
+       & > label {
+        height: 22px;
+      }
+    }
+  }
+}

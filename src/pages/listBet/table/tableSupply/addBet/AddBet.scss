@@ -1,0 +1,52 @@
+@import '../../../../../assets//Style.scss';
+
+.add-bet {
+    .ant-btn {
+        background-size: 200% auto;
+        background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+        background-image: linear-gradient(to right, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+        border: 0;
+        border-radius: 20px;
+        span {
+            font-size: 12px;
+        }
+    }
+    .ant-btn:hover {
+        background-position: right center; 
+    }
+}
+
+.modal-add-bet {
+    // title header
+    .ant-modal-title {
+        text-align: center;
+    }
+
+    label{
+        color: $color-title-popup;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .btn-submit {
+            width: 100%;
+            font-weight: 600;
+            height: 47px;
+            background-size: 200% auto;
+            background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+            background-image: linear-gradient(to right, #ff67cb 0%,#ffcc67 51%,#ff67cb);
+            border: 0;
+            border-radius: 34px;
+            span {
+                font-size: 18px;
+            }
+    }
+    .btn-submit:hover {
+        background-position: right center; 
+    }
+
+    // btn footer
+    .ant-modal-footer {
+        display: none;
+    }
+}
