@@ -139,7 +139,7 @@ class TableSupply extends Component {
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
                         render={() => <div>
-                            <Button type="primary" className="btn-remove" onClick={this.onShowModalRemove}>Remove</Button><br/>
+                            {/* <Button type="primary" className="btn-remove" onClick={this.onShowModalRemove}>Remove</Button><br/> */}
                             <Button type="primary" className="col-btn-withdraw">Withdraw</Button>
                         </div>}
                     />

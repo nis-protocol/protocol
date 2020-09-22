@@ -30,6 +30,10 @@
     top: 4px;
 }
 
+.footer-left-mobile {
+    display: none;
+}
+
 // footer right
 .footer-right {
     text-align: end;
@@ -51,5 +55,43 @@
         border-radius: 5px;
         font-size: 12px;
         font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    // footer right
+    .footer-right {
+        text-align: start;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    // footer left
+    .footer-left {
+        display: none;
+    }
+    // footer left mobile
+    .footer-left-mobile {
+        display: block;
+        position: relative;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 5px;
+        p {
+            margin-left: 20px;
+            color: $color-text-footer;
+            a {
+                color: $color-text-footer;
+            }
+        }
+    }
+    .footer-left-mobile::before {
+        position: absolute;
+        content: "";
+        height: 10px;
+        width: 10px;
+        background-color: $color-text-blue;
+        border-radius: 100%;
+        top: 4px;
     }
 }

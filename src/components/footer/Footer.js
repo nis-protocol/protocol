@@ -12,7 +12,7 @@ class FooterComponent extends Component {
         return (
             <Footer className="footer">
                 <Row {...globalProps.row}>
-                    <Col {...globalProps.colHalf}>
+                    <Col {...globalProps.col6}>
                         <div className="footer-left">
                             <span>Latest Block: 7211176</span>
                             <span><a href="#">Markets</a></span>
@@ -21,8 +21,16 @@ class FooterComponent extends Component {
                             <span><a href="#">Support</a></span>
                             <span><a href="#">Terms</a></span>
                         </div>
+                        <div className="footer-left-mobile">
+                            <p>Latest Block: 7211176</p>
+                            <p><a href="#">Markets</a></p>
+                            <p><a href="#">Govermance</a></p>
+                            <p><a href="#">COMP</a></p>
+                            <p><a href="#">Support</a></p>
+                            <p><a href="#">Terms</a></p>
+                        </div>
                     </Col>
-                    <Col {...globalProps.colHalf}>
+                    <Col {...globalProps.col5}>
                         <div className="footer-right">
                             {/* monney */}
                             <span><Select
