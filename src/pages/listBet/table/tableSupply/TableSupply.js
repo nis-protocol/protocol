@@ -16,7 +16,7 @@ const { Column } = Table;
 const data = [
     {
         id: 1,
-        name: "basic attention token",
+        name: "basic attention tokenddddddddddddddddddđ",
         logo: logoBasic,
         max_bet: "0 bat",
         time_bet: '12/10/2020',
@@ -54,7 +54,7 @@ const data = [
         id: 5,
         name: "compound usdt",
         logo: logoUsdt,
-        max_bet: "0 usdt",
+        max_bet: "1000000 usdt",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"

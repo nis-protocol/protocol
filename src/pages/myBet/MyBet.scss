@@ -64,7 +64,7 @@
             color: $color-td-table;
             border-bottom-left-radius: 5px;
             text-align: end;
-            max-width: 300px;
+            max-width: 288px;
         }
 
         .ant-table-thead {
@@ -103,7 +103,19 @@
             }
             // col option
             .col-option {
-                .ant-btn {
+                // btn remove
+                .btn-remove {
+                    border: 0;
+                    border-radius: 20px;
+                    background-color: $color-text-red;
+                    padding: 0 18px;
+                    margin-bottom: 5px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+                // btn col withdraw
+                .col-btn-withdraw {
                     background-size: 200% auto;
                     background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 51%,#ff67cb);
                     background-image: linear-gradient(to right, #ff67cb 0%,#ffcc67 51%,#ff67cb);
@@ -113,7 +125,7 @@
                         font-size: 12px;
                     }
                 }
-                .ant-btn:hover {
+                .col-btn-withdraw:hover {
                     background-position: right center; 
                 }
             }
@@ -123,7 +135,7 @@
 }
 
 // modal supply
-.modal-supply {
+.modal-withdraw {
     .ant-modal-header {
         text-align: center;
         img {
@@ -153,8 +165,9 @@
     }
 
     .ant-modal-body {
-        .ant-btn {
-            width: 1;width: 100%;
+        // btn submit
+        .btn-submit {
+            width: 100%;
             font-weight: 600;
             height: 47px;
             background-size: 200% auto;
@@ -163,10 +176,10 @@
             border: 0;
             border-radius: 34px;
             span {
-                font-size: 12px;
+                font-size: 18px;
             }
         }
-        .ant-btn:hover {
+        .btn-submit:hover {
             background-position: right center; 
         }
     }
@@ -174,6 +187,20 @@
     .ant-modal-footer {
         display: none;
     }
+}
+
+@media screen and (max-width: 768px) {
+    // content table
+    .my-bet {
+       .table-dashboard {
+               .ant-table-wrapper {
+                   td.ant-table-cell.ant-table-cell-ellipsis {
+                       max-width: 168px;
+                       width: 100%;
+                   }
+               }
+           }
+   }
 }
 
 @media screen and (max-width: 767px) {
@@ -240,7 +267,7 @@
        .table-dashboard {
                .ant-table-wrapper {
                    td.ant-table-cell.ant-table-cell-ellipsis {
-                       max-width: 213px;
+                       max-width: 169px;
                    }
                }
            }
@@ -255,7 +282,8 @@
                 .ant-table-wrapper {
             
                     td.ant-table-cell.ant-table-cell-ellipsis {
-                        max-width: 164px;
+                        font-size: 13px;
+                        max-width: 133px;
                     }
             
                     .ant-table-tbody {
@@ -264,7 +292,6 @@
                         }
                         .style-col-name {
                             div {
-                                padding-top: 3px;
                                 img {
                                     height: 32px;
                                     width: 32px;
@@ -272,6 +299,14 @@
                                 }
                             }
                         }
+                        .col-option {
+                            .col-btn-withdraw {
+                                padding: 0 9px;
+                            }
+                            .btn-remove {
+                                padding: 0 12px;
+                            }
+                       }
                     }
                 }
             }
@@ -287,6 +322,20 @@
                    td.ant-table-cell.ant-table-cell-ellipsis {
                        max-width: 113px;
                    }
+
+                   .ant-table-tbody {
+                       td {
+                           padding: 16px 9px;
+                       }
+                        .col-option {
+                            .col-btn-withdraw {
+                                padding: 0 9px;
+                            }
+                            .btn-remove {
+                                padding: 0 12px;
+                            }
+                    }
+                }
                }
            }
    }
@@ -305,12 +354,11 @@
                    }
            
                    .ant-table-tbody {
-                       tr:hover {
-                           cursor: pointer;
-                       }
+                        td {
+                            padding: 16px 6px;
+                        }
                        .style-col-name {
                            div {
-                               padding-top: 3px;
                                img {
                                    height: 25px;
                                    width: 25px;
@@ -319,8 +367,11 @@
                            }
                        }
                        .col-option {
-                            .ant-btn {
+                            .col-btn-withdraw {
                                 padding: 5px;
+                            }
+                            .btn-remove {
+                                padding: 0 8px;
                             }
                        }
                    }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Button, Drawer } from 'antd';
 import { globalProps } from '../../../data/props';
-import logo from '../../../assets/images/logo.png';
+import logoDrawer from '../../../assets/images/logo-footer.png';
 import logoCoinbase from '../../../assets/images/icn-coinbase-wallet.png';
 import logoLedger from '../../../assets/images/icn-ledger.png';
 import logoMetamask from '../../../assets/images/icn-metamask.png';
@@ -41,7 +41,7 @@ class User extends Component {
                         <Button className="btn-onclose" onClick={this.onClose}>X</Button>
                     </div>
                     <div className="header-drawer">
-                        <img src={logo} />
+                        <img src={logoDrawer} />
                         <p>Connect Wallet</p>
                         <h1>To start using Compound</h1>
                     </div>

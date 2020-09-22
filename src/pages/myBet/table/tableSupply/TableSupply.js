@@ -15,7 +15,7 @@ const { Column } = Table;
 const data = [
     {
         id: 1,
-        name: "basic attention token",
+        name: "basic attention tokenddddddddddddd",
         logo: logoBasic,
         max_bet: "0 bat",
         time_bet: '12/10/2020',
@@ -53,7 +53,7 @@ const data = [
         id: 5,
         name: "compound usdt",
         logo: logoUsdt,
-        max_bet: "0 usdt",
+        max_bet: "1000000 usdt",
         time_bet: '12/10/2020',
         time_end: '12/12/2020',
         status: "active"
@@ -82,11 +82,25 @@ class TableSupply extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            showModalRemove: false
         }
         this.onCloseModal = this.onCloseModal.bind(this)
+        this.onShowModalRemove = this.onShowModalRemove.bind(this)
+        this.onCloseModalRemove = this.onCloseModalRemove.bind(this)
     }
 
+    // modal remove
+    async onShowModalRemove(){
+        await this.setState({showModalRemove: true})
+        this.setState({ showModal: false })
+    }
+
+    onCloseModalRemove(){
+        this.setState({showModalRemove: false})
+    }
+
+    // modal withdraw
     onShowModal(e) {
         this.setState({ showModal: true })
     }
@@ -100,7 +114,7 @@ class TableSupply extends Component {
     }
 
     render() {
-        let { showModal } = this.state;
+        let { showModal, showModalRemove } = this.state;
         return (
             <div>
                 <PageHeader
@@ -124,16 +138,34 @@ class TableSupply extends Component {
                     <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
-                        render={() => <Button type="primary" >Withdraw</Button>}
+                        render={() => <div>
+                            <Button type="primary" className="btn-remove" onClick={this.onShowModalRemove}>Remove</Button><br/>
+                            <Button type="primary" className="col-btn-withdraw">Withdraw</Button>
+                        </div>}
                     />
                 </Table>
-                {/* modal */}
+                {/* modal withdraw*/}
                 <Modal
-                    wrapClassName="modal-supply"
+                    wrapClassName="modal-withdraw"
                     title={<div><img src={logoUsd} /><span> USD Coin</span></div>}
                     style={{ top: 20 }}
                     visible={showModal}
                     onCancel={this.onCloseModal}
+                >
+                    <div className="time-info">
+                        <p><span>Time start:</span> 12/10/2020</p>
+                        <p><span>Time end:</span> 12/12/2020</p>
+                        <p><span>Total balance:</span> + 200 $</p>
+                    </div>
+                    <Button type="primary" htmlType="submit" className="btn-submit">Withdraw</Button>
+                </Modal>
+                {/* modal remove*/}
+                <Modal
+                    wrapClassName="modal-withdraw"
+                    title="Modal remove"
+                    style={{ top: 20 }}
+                    visible={showModalRemove}
+                    onCancel={this.onCloseModalRemove}
                 >
                     <div className="time-info">
                         <p><span>Time start:</span> 12/10/2020</p>
