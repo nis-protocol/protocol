@@ -21,7 +21,7 @@ const data = [
         logo: logoBasic,
         max_bet: "0 bat",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -30,7 +30,7 @@ const data = [
         logo: logoDai,
         max_bet: "0 dai",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -39,7 +39,7 @@ const data = [
         logo: logoEth,
         max_bet: "0 eth",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -48,7 +48,7 @@ const data = [
         logo: logoUsd,
         max_bet: "0 usdc",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -57,7 +57,7 @@ const data = [
         logo: logoUsdt,
         max_bet: "1000000 usdt",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -66,7 +66,7 @@ const data = [
         logo: logoBtc,
         max_bet: "0 wbtc",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -75,7 +75,7 @@ const data = [
         logo: logoOx,
         max_bet: "0 zrx",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
 ];
@@ -124,9 +124,11 @@ class TableSupply extends Component {
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
                     <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
-                        // render={val => <span>{format.date(val)}</span>}
+                        render={val => <span>{moment(val).format(format.date)}</span>}
                     />
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" />
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
+                        render={val => <span>{moment(val).format(format.date)}</span>}
+                    />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
                         render={() => <Button type="primary" >Bet <ArrowRightOutlined /></Button>}
@@ -141,8 +143,8 @@ class TableSupply extends Component {
                     onCancel={this.onCloseModal}
                 >
                     <div className="time-info">
-                        <p><span>Time start:</span>{moment(12/10/2020).format(format.date)}</p>
-                        <p><span>Time end:</span>{moment(12/10/2020).format(format.date)}</p>
+                        <p><span>Time start:</span>{moment("12/10/2020").format(format.date)}</p>
+                        <p><span>Time end:</span>{moment("1/11/2020").format(format.date)}</p>
                     </div>
                     <Form
                         {...globalProps.form}

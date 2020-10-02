@@ -135,8 +135,7 @@ export const globalProps = {
 }
 
 export const format = {
-    date: "DD/MM/YYYY",
-    // date: "YYYY/MM/DD",
-    dateTime: "DD/MM/YYYY HH:mm",
-    dateTimes: "DD/MM/YYYY HH:mm:ss",
+    date: "YYYY/DD/MM",
+    dateTime: "YYYY/DD/MM HH:mm",
+    dateTimes: "YYYY/DD/MM HH:mm:ss",
 }

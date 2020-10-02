@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { globalProps, rules } from '../../../../data';
-import { Table, PageHeader, Modal, Button, Form, Radio, Input } from 'antd';
+import { globalProps, format } from '../../../../data';
+import moment from "moment";
+import { Table, PageHeader, Modal, Button } from 'antd';
 import logoBasic from '../../../../assets/images/logo-basic.png';
 import logoBtc from '../../../../assets/images/logo-btc.png';
 import logoDai from '../../../../assets/images/logo-dai.png';
@@ -19,7 +20,7 @@ const data = [
         logo: logoBasic,
         max_bet: "0 bat",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -28,7 +29,7 @@ const data = [
         logo: logoDai,
         max_bet: "0 dai",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -37,7 +38,7 @@ const data = [
         logo: logoEth,
         max_bet: "0 eth",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -46,7 +47,7 @@ const data = [
         logo: logoUsd,
         max_bet: "0 usdc",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -55,7 +56,7 @@ const data = [
         logo: logoUsdt,
         max_bet: "1000000 usdt",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -64,7 +65,7 @@ const data = [
         logo: logoBtc,
         max_bet: "0 wbtc",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
     {
@@ -73,7 +74,7 @@ const data = [
         logo: logoOx,
         max_bet: "0 zrx",
         time_bet: '12/10/2020',
-        time_end: '12/12/2020',
+        time_end: '1/11/2020',
         status: "active"
     },
 ];
@@ -134,8 +135,12 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" />
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" />
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
+                        render={val => <span>{moment(val).format(format.date)}</span>}
+                    />
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
+                        render={val => <span>{moment(val).format(format.date)}</span>}
+                    />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
                         render={() => <div>

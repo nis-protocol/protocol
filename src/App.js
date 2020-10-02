@@ -12,8 +12,32 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionUser, actionLoading } from './action';
+import Web3 from "web3";
 
 class App extends Component {
+  componentDidMount(){
+    this.loadBlockchainData()
+  }
+
+  async loadBlockchainData() {
+    const {getDataMetamask} = this.props;
+    const web3 = new Web3(Web3.givenProvider)
+    const accounts = await web3.eth.getAccounts()
+    console.log("account: ", accounts)
+    if(accounts.length > 0){
+      const balance = await web3.eth.getBalance(accounts[0])
+      let dataMetamask = {
+        accounts,
+        balance
+      }
+      console.log("test: ", dataMetamask)
+      getDataMetamask(dataMetamask)
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -39,4 +63,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  getDataMetamask: actionUser.getDataMetamask,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
