@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { globalProps, rules } from '../../../../data';
+import { globalProps, rules, format } from '../../../../data';
+import moment from "moment";
 import { Table, PageHeader, Modal, Button, Form, Descriptions, Radio, Input } from 'antd';
 import logoBasic from '../../../../assets/images/logo-basic.png';
 import logoBtc from '../../../../assets/images/logo-btc.png';
@@ -122,7 +123,9 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" />
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
+                        // render={val => <span>{format.date(val)}</span>}
+                    />
                     <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
@@ -138,8 +141,8 @@ class TableSupply extends Component {
                     onCancel={this.onCloseModal}
                 >
                     <div className="time-info">
-                        <p><span>Time start:</span> 12/10/2020</p>
-                        <p><span>Time end:</span> 12/12/2020</p>
+                        <p><span>Time start:</span>{moment(12/10/2020).format(format.date)}</p>
+                        <p><span>Time end:</span>{moment(12/10/2020).format(format.date)}</p>
                     </div>
                     <Form
                         {...globalProps.form}

@@ -55,6 +55,10 @@
             border: 0;
             border-radius: 24px;
             color: $color-white;
+            width: 134px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
         }
         .ant-btn:hover {
             background-position: right center;
@@ -62,20 +66,28 @@
     }
 }
 
-// drawer
-.ant-drawer-right .ant-drawer-content-wrapper {
-    width: 500px !important;
+// modal
+.modal-user {
+
+    .ant-modal {
+        height: 100%;
+    }
+
+    .ant-modal-footer {
+        display: none;
+    }
 
     // header
-    .ant-drawer-body {
+    .ant-modal-body {
         padding: 16px;
+        padding-top: 50px;
         .btn-onclose {
             border: none;
             margin-bottom: 12px;
             font-size: 20px;
         }
-        .header-drawer {
-            text-align: center;
+        .header-modal-user {
+            text-align: center; 
             img {
                 width: 100px;
                 height: 100px;
@@ -93,50 +105,51 @@
                 color: $color-text-footer;
             }
         }
-    }
-
-    // body
-    .body-drawer {
-
-        .btn-body {
-            position: relative;
-            height: 100px;
-            border-bottom: 0.5px solid $border-botton-user;
-            border-radius: 2px;
-            transition: box-shadow 0.3s ease-in-out;
-            align-items: center;
-            line-height: 100px;
-            padding: 0 30px;
-
-            img {
-                margin-bottom: 6px;
+    
+        // body
+        .body-modal-user {
+    
+            .btn-body {
+                position: relative;
+                height: 100px;
+                border-bottom: 0.5px solid $border-botton-user;
+                border-radius: 2px;
+                transition: box-shadow 0.3s ease-in-out;
+                align-items: center;
+                line-height: 100px;
+                padding: 0 30px;
+    
+                img {
+                    margin-bottom: 6px;
+                }
+                .coin-name {
+                    font-size: 18px;
+                    color: $color-btn-user;
+                    margin-left: 20px;
+                }
+                i {
+                    position: absolute;
+                    top: 0px;
+                    right: 30px;
+                    font-size: 30px;
+                }
             }
-            .coin-name {
-                font-size: 18px;
-                color: $color-btn-user;
-                margin-left: 20px;
-            }
-            i {
-                position: absolute;
-                top: 0px;
-                right: 30px;
-                font-size: 30px;
+            .btn-body:hover {
+                box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
             }
         }
-        .btn-body:hover {
-            box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+    
+        // footer
+        .footer-modal-user {
+            text-align: center;
+            color: $color-text-footer;
+            margin-top: 26px;
+            a:hover {
+                border-bottom: 0.5px solid #096dd9;
+            }
         }
     }
-
-    // footer
-    .footer-drawer {
-        text-align: center;
-        color: $color-text-footer;
-        margin-top: 26px;
-        a:hover {
-            border-bottom: 0.5px solid #096dd9;
-        }
-    }
+    
 }
 
 @media screen and (max-width: 1024px) {
@@ -187,14 +200,14 @@
     }
 
     // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
+    .modal-user .ant-modal {
         width: 429px !important;
     }
 } 
 
 @media screen and (max-width: 414px) {
     // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
+    .modal-user .ant-modal {
         width: 378px !important;
     }
     
@@ -207,10 +220,10 @@
 
 @media screen and (max-width: 375px) {
     // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
+    .modal-user .ant-modal {
         width: 348px !important;
         // footer
-        .footer-drawer {
+        .footer-modal-user {
             font-size: 12px;
         }   
     }
@@ -274,13 +287,13 @@
     }
 
     // drawer
-    .ant-drawer-right .ant-drawer-content-wrapper {
+    .modal-user .ant-modal {
         width: 300px !important;
 
         // header
-        .ant-drawer-body {
+        .ant-modal-body {
             padding: 8px;
-            .header-drawer {
+            .header-modal-user {
                 img {
                     width: 70px;
                     height: 70px;
@@ -292,30 +305,29 @@
                     font-size: 16px;
                 }
             }
-        }
+            // body
+            .body-modal-user {
 
-        // body
-        .body-drawer {
+                .btn-body {
+                    height: 80px;
+                    line-height: 80px;
+                    padding: 0 8px;
 
-            .btn-body {
-                height: 80px;
-                line-height: 80px;
-                padding: 0 8px;
-
-                .coin-name {
-                    font-size: 16px;
-                    font-weight: 600;
-                    margin-left: 9px;
-                }
-                i {
-                    font-size: 25px;
+                    .coin-name {
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-left: 9px;
+                    }
+                    i {
+                        font-size: 25px;
+                    }
                 }
             }
-        }
 
-        // footer
-        .footer-drawer {
-            font-size: 11px;
+            // footer
+            .footer-modal-user {
+                font-size: 11px;
+            }
         }
     }
 } 
