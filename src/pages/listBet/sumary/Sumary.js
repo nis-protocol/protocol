@@ -6,7 +6,7 @@ class Sumary extends Component {
     render() {
         const {dataMetamask} = this.props;
 
-        let handleBalance = dataMetamask ? '$' + ((dataMetamask.balance)/(Math.pow(10, 18))).toFixed(3) : <Spin />
+        let handleBalance = dataMetamask ? 'ETH ' + ((dataMetamask.balance)/(Math.pow(10, 18))).toFixed(3) : <Spin />
 
         return (
             <div className="sumary">

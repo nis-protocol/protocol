@@ -26,14 +26,12 @@ class App extends Component {
     const {getDataMetamask} = this.props;
     const web3 = new Web3(Web3.givenProvider)
     const accounts = await web3.eth.getAccounts()
-    console.log("account: ", accounts)
     if(accounts.length > 0){
       const balance = await web3.eth.getBalance(accounts[0])
       let dataMetamask = {
         accounts,
         balance
       }
-      console.log("test: ", dataMetamask)
       getDataMetamask(dataMetamask)
     }
   }

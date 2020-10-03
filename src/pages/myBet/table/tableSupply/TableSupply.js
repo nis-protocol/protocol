@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { globalProps, format } from '../../../../data';
 import moment from "moment";
 import { Table, PageHeader, Modal, Button } from 'antd';
-import logoBasic from '../../../../assets/images/logo-basic.png';
-import logoBtc from '../../../../assets/images/logo-btc.png';
 import logoDai from '../../../../assets/images/logo-dai.png';
 import logoEth from '../../../../assets/images/logo-eth.png';
-import logoOx from '../../../../assets/images/logo-ox.png';
 import logoUsd from '../../../../assets/images/logo-usd.png';
 import logoUsdt from '../../../../assets/images/logo-usdt.png';
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -15,64 +12,28 @@ const { Column } = Table;
 
 const data = [
     {
-        id: 1,
-        name: "basic attention tokenddddddddddddd",
-        logo: logoBasic,
-        max_bet: "0 bat",
+        id: 3,
+        name: "man united vs arsenal",
+        logo: logoEth,
+        max_bet: "5 eth",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
     },
     {
         id: 2,
-        name: "dai",
+        name: "man. city vs chelsea",
         logo: logoDai,
-        max_bet: "0 dai",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 3,
-        name: "ether",
-        logo: logoEth,
-        max_bet: "0 eth",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 4,
-        name: "usd coin",
-        logo: logoUsd,
-        max_bet: "0 usdc",
+        max_bet: "500 dai",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
     },
     {
         id: 5,
-        name: "compound usdt",
+        name: "everton vs tottenham",
         logo: logoUsdt,
-        max_bet: "1000000 usdt",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 6,
-        name: "wrapped btv",
-        logo: logoBtc,
-        max_bet: "0 wbtc",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 7,
-        name: "0x",
-        logo: logoOx,
-        max_bet: "0 zrx",
+        max_bet: "1500 usdt",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
@@ -136,10 +97,10 @@ class TableSupply extends Component {
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
                     <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
-                        render={val => <span>{moment(val).format(format.date)}</span>}
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>22:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
-                        render={val => <span>{moment(val).format(format.date)}</span>}
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>23:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
@@ -152,7 +113,7 @@ class TableSupply extends Component {
                 {/* modal withdraw*/}
                 <Modal
                     wrapClassName="modal-withdraw"
-                    title={<div><img src={logoUsd} /><span> USD Coin</span></div>}
+                    title={<div><img src={logoEth} /><span> Man United vs Arsenal</span></div>}
                     style={{ top: 20 }}
                     visible={showModal}
                     onCancel={this.onCloseModal}

@@ -22,7 +22,7 @@ class HeaderComponent extends Component {
                         </h1>
                     </Col>
                     <Col {...globalProps.col10} className="dashboard-vote">
-                        <NavLink to="/" activeClassName="style-active-navlink" exact className="btn-dashboard">List Bet</NavLink>
+                        <NavLink to="/" activeClassName="style-active-navlink" exact className="btn-dashboard">Bet List</NavLink>
                         <NavLink to="/my-bet" activeClassName="style-active-navlink" exact className="btn-mybet">My Bet</NavLink>
                         <NavLink to="/vote" activeClassName="style-active-navlink" className="btn-vote">Vote</NavLink>
                     </Col>

@@ -35,7 +35,7 @@ class AddBet extends Component {
         let { showModal } = this.state;
         return (
             <div className="add-bet">
-                <Button type="primary" onClick={this.onShow}><PlusOutlined/> Add Bet</Button>
+                <Button type="primary" onClick={this.onShow}><PlusOutlined/> Add</Button>
                 <Modal
                     wrapClassName="modal-add-bet"
                     title="Add Bet infomation"

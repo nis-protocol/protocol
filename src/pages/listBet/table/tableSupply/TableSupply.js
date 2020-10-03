@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { globalProps, rules, format } from '../../../../data';
 import moment from "moment";
 import { Table, PageHeader, Modal, Button, Form, Descriptions, Radio, Input } from 'antd';
-import logoBasic from '../../../../assets/images/logo-basic.png';
-import logoBtc from '../../../../assets/images/logo-btc.png';
 import logoDai from '../../../../assets/images/logo-dai.png';
 import logoEth from '../../../../assets/images/logo-eth.png';
-import logoOx from '../../../../assets/images/logo-ox.png';
-import logoUsd from '../../../../assets/images/logo-usd.png';
 import logoUsdt from '../../../../assets/images/logo-usdt.png';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import AddBet from './addBet/AddBet';
@@ -16,64 +12,28 @@ const { Column } = Table;
 
 const data = [
     {
-        id: 1,
-        name: "basic attention tokenddddddddddddddddddđ",
-        logo: logoBasic,
-        max_bet: "0 bat",
+        id: 3,
+        name: "man united vs arsenal",
+        logo: logoEth,
+        max_bet: "5 eth",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
     },
     {
         id: 2,
-        name: "dai",
+        name: "man. city vs chelsea",
         logo: logoDai,
-        max_bet: "0 dai",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 3,
-        name: "ether",
-        logo: logoEth,
-        max_bet: "0 eth",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 4,
-        name: "usd coin",
-        logo: logoUsd,
-        max_bet: "0 usdc",
+        max_bet: "500 dai",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
     },
     {
         id: 5,
-        name: "compound usdt",
+        name: "everton vs tottenham",
         logo: logoUsdt,
-        max_bet: "1000000 usdt",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 6,
-        name: "wrapped btv",
-        logo: logoBtc,
-        max_bet: "0 wbtc",
-        time_bet: '12/10/2020',
-        time_end: '1/11/2020',
-        status: "active"
-    },
-    {
-        id: 7,
-        name: "0x",
-        logo: logoOx,
-        max_bet: "0 zrx",
+        max_bet: "1500 usdt",
         time_bet: '12/10/2020',
         time_end: '1/11/2020',
         status: "active"
@@ -84,7 +44,8 @@ class TableSupply extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            value: 1
         }
         this.onCloseModal = this.onCloseModal.bind(this)
     }
@@ -101,13 +62,21 @@ class TableSupply extends Component {
         this.setState({ showModal: false })
     }
 
+    onChange = e => {
+        // console.log('radio checked', e.target.value);
+        this.setState({
+          value: e.target.value,
+        });
+      };
+
     render() {
-        let { showModal } = this.state;
+        let { showModal, value } = this.state;
+
         return (
             <div>
                 <PageHeader
                     className="site-page-header"
-                    title="List Bet"
+                    title="Bet List"
                     extra={<AddBet />}
                 />
                 <Table
@@ -124,10 +93,10 @@ class TableSupply extends Component {
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
                     <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
-                        render={val => <span>{moment(val).format(format.date)}</span>}
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>22:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
-                        render={val => <span>{moment(val).format(format.date)}</span>}
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>23:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
@@ -137,33 +106,35 @@ class TableSupply extends Component {
                 {/* modal */}
                 <Modal
                     wrapClassName="modal-supply"
-                    title={<div><img src={logoUsd} /><span> USD Coin</span></div>}
+                    title={<div><img src={logoEth} /><span> Man United vs Arsenal</span><br/><span style={{fontSize: "16px", color: "#ff67cb"}}>A vs B</span></div>}
                     style={{ top: 20 }}
                     visible={showModal}
                     onCancel={this.onCloseModal}
                 >
                     <div className="time-info">
-                        <p><span>Time start:</span>{moment("12/10/2020").format(format.date)}</p>
-                        <p><span>Time end:</span>{moment("1/11/2020").format(format.date)}</p>
+                        <p><span>Time start: </span>{moment("12/10/2020 22:00").format(format.dateTime)}</p>
+                        <p><span>Time end: </span>{moment("1/11/2020 23:00").format(format.dateTime)}</p>
                     </div>
                     <Form
                         {...globalProps.form}
                         onFinish={e => this.onSubmit(e)}
                     >
                         <Form.Item
-                            label="Max Beet" {...globalProps.formItem}
+                            label="Max Bet" {...globalProps.formItem}
                             name="maxBet"
                             rules={[rules.required]}
                         >
-                            <Input style={{ width: "100%" }} addonAfter="USDC" />
+                            <Input style={{ width: "100%" }} addonAfter="ETH" />
                         </Form.Item>
                         <Form.Item
+                            label="Best Odds"
                             name="radio-button"
                             rules={[rules.required]}
                         >
-                            <Radio.Group>
-                                <Radio value="a">Loose</Radio>
-                                <Radio value="b">Win</Radio>
+                            <Radio.Group onChange={this.onChange} defaultValue={value}>
+                                <Radio checked = {true} value={1}><span style={{color: "#ff67cb", fontWeight: "bold"}}>A </span>Win</Radio>
+                                <Radio value={2}>Draw</Radio>
+                                <Radio value={3}><span style={{color: "#ff67cb", fontWeight: "bold"}}>B </span>Win</Radio>
                             </Radio.Group>
                         </Form.Item>
                         <Form.Item >

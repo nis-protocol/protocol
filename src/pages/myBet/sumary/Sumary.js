@@ -8,7 +8,7 @@ class Sumary extends Component {
     render() {
         const {dataMetamask} = this.props;
 
-        let handleBalance = dataMetamask ? '$' + ((dataMetamask.balance)/(Math.pow(10, 18))).toFixed(3) : <Spin />
+        let handleBalance = dataMetamask ? 'ETH ' + ((dataMetamask.balance)/(Math.pow(10, 18))).toFixed(3) : <Spin />
 
         return (
             <Row {...globalProps.row} className="sumary">
@@ -19,7 +19,7 @@ class Sumary extends Component {
                 </Col>
                 <Col {...globalProps.col3} className="price-total win-total">
                     <p>Total Win</p>
-                    <h1>$100.3232423</h1>
+                    <h1>ETH 15.325</h1>
                 </Col>
                 <Col {...globalProps.col4} className="style-col4"></Col>
             </Row>
