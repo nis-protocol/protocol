@@ -34,6 +34,24 @@ class App extends Component {
       }
       getDataMetamask(dataMetamask)
     }
+
+    const ethereum = await window.ethereum
+    if(ethereum){
+      ethereum.on("accountsChanged", async (accounts) => {
+      if (accounts.length === 1) {
+        const balance = await web3.eth.getBalance(accounts[0])
+        let dataMetamask = {
+          accounts,
+          balance
+        }
+        getDataMetamask(dataMetamask)
+      } else {
+        let dataMetamask = null
+        // hideLoading()
+        getDataMetamask(dataMetamask)
+      }
+    })};
+
   }
 
   render() {

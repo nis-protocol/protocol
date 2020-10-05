@@ -62,6 +62,16 @@
     // footer right
     .footer-right {
         text-align: start;
+
+        // price
+        .price {
+            margin-right: 12px;
+        }
+    }
+
+    // footer left
+    .footer-left {
+        font-size: 11px;
     }
 }
 
