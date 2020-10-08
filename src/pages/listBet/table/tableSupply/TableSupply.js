@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { globalProps, rules, format } from '../../../../data';
 import moment from "moment";
-import { Table, PageHeader, Modal, Button, Form, Descriptions, Radio, Input } from 'antd';
+import { Table, PageHeader, Modal, Button, Form, Descriptions, Radio, Input, Popconfirm } from 'antd';
 import logoDai from '../../../../assets/images/logo-dai.png';
 import logoEth from '../../../../assets/images/logo-eth.png';
 import logoUsdt from '../../../../assets/images/logo-usdt.png';
@@ -65,9 +65,9 @@ class TableSupply extends Component {
     onChange = e => {
         // console.log('radio checked', e.target.value);
         this.setState({
-          value: e.target.value,
+            value: e.target.value,
         });
-      };
+    };
 
     render() {
         let { showModal, value } = this.state;
@@ -92,11 +92,11 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
-                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>22:00</span></div>}
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet"
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br /><span>22:00</span></div>}
                     />
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
-                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>23:00</span></div>}
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end"
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br /><span>23:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
@@ -106,7 +106,7 @@ class TableSupply extends Component {
                 {/* modal */}
                 <Modal
                     wrapClassName="modal-supply"
-                    title={<div><img src={logoEth} /><span> Man United vs Arsenal</span><br/><span style={{fontSize: "16px", color: "#ff67cb"}}>A vs B</span></div>}
+                    title={<div><img src={logoEth} /><span> Man United vs Arsenal</span><br /><span style={{ fontSize: "16px", color: "#ff67cb" }}>A vs B</span></div>}
                     style={{ top: 20 }}
                     visible={showModal}
                     onCancel={this.onCloseModal}
@@ -132,13 +132,15 @@ class TableSupply extends Component {
                             rules={[rules.required]}
                         >
                             <Radio.Group onChange={this.onChange} defaultValue={value}>
-                                <Radio checked = {true} value={1}><span style={{color: "#ff67cb", fontWeight: "bold"}}>A </span>Win</Radio>
+                                <Radio checked={true} value={1}><span style={{ color: "#ff67cb", fontWeight: "bold" }}>A </span>Win</Radio>
                                 <Radio value={2}>Draw</Radio>
-                                <Radio value={3}><span style={{color: "#ff67cb", fontWeight: "bold"}}>B </span>Win</Radio>
+                                <Radio value={3}><span style={{ color: "#ff67cb", fontWeight: "bold" }}>B </span>Win</Radio>
                             </Radio.Group>
                         </Form.Item>
                         <Form.Item >
-                            <Button type="primary" htmlType="submit" className="btn-submit">Apply</Button>
+                            <Popconfirm placement="top" title="this is Private demo!" okText="Yes">
+                                <Button type="primary" className="btn-submit">Apply</Button>
+                            </Popconfirm>
                         </Form.Item>
                     </Form>
                 </Modal>

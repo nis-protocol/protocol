@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { globalProps, format } from '../../../../data';
 import moment from "moment";
-import { Table, PageHeader, Modal, Button } from 'antd';
+import { Table, PageHeader, Modal, Button, Popconfirm } from 'antd';
 import logoDai from '../../../../assets/images/logo-dai.png';
 import logoEth from '../../../../assets/images/logo-eth.png';
 import logoUsd from '../../../../assets/images/logo-usd.png';
@@ -53,13 +53,13 @@ class TableSupply extends Component {
     }
 
     // modal remove
-    async onShowModalRemove(){
-        await this.setState({showModalRemove: true})
+    async onShowModalRemove() {
+        await this.setState({ showModalRemove: true })
         this.setState({ showModal: false })
     }
 
-    onCloseModalRemove(){
-        this.setState({showModalRemove: false})
+    onCloseModalRemove() {
+        this.setState({ showModalRemove: false })
     }
 
     // modal withdraw
@@ -96,11 +96,11 @@ class TableSupply extends Component {
                         render={(val, record) => <div title={val}><img src={record.logo} width="40px" height="40px" /><span>{val}</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Max bet" dataIndex="max_bet" className="style-col-my-bet" />
-                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet" 
-                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>22:00</span></div>}
+                    <Column {...globalProps.tableRow} title="Time bet" dataIndex="time_bet" className="col-time-bet"
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br /><span>22:00</span></div>}
                     />
-                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end" 
-                        render={val => <div><span>{moment(val).format(format.date)}</span><br/><span>23:00</span></div>}
+                    <Column {...globalProps.tableRow} title="Time end" dataIndex="time_end" className="col-time-end"
+                        render={val => <div><span>{moment(val).format(format.date)}</span><br /><span>23:00</span></div>}
                     />
                     <Column {...globalProps.tableRow} title="Status" dataIndex="status" className="col-status" />
                     <Column {...globalProps.tableRow} title="Option" dataIndex="option" className="col-option"
@@ -123,7 +123,9 @@ class TableSupply extends Component {
                         <p><span>Time end:</span> 12/12/2020</p>
                         <p><span>Total balance:</span> + 200 $</p>
                     </div>
-                    <Button type="primary" htmlType="submit" className="btn-submit">Withdraw</Button>
+                    <Popconfirm placement="top" title="this is Private demo!" okText="Yes">
+                        <Button type="primary" htmlType="submit" className="btn-submit">Withdraw</Button>
+                    </Popconfirm>
                 </Modal>
                 {/* modal remove*/}
                 <Modal
@@ -138,7 +140,9 @@ class TableSupply extends Component {
                         <p><span>Time end:</span> 12/12/2020</p>
                         <p><span>Total balance:</span> + 200 $</p>
                     </div>
-                    <Button type="primary" htmlType="submit" className="btn-submit">Withdraw</Button>
+                    <Popconfirm placement="top" title="this is Private demo!" okText="Yes">
+                        <Button type="primary" className="btn-submit">Withdraw</Button>
+                    </Popconfirm>
                 </Modal>
             </div>
         );

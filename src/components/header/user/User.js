@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Modal, Spin } from 'antd';
+import { Col, Button, Modal, Spin, Popconfirm } from 'antd';
 import { globalProps } from '../../../data/props';
 import logoDrawer from '../../../assets/images/logo-footer.png';
 import logoCoinbase from '../../../assets/images/icn-coinbase-wallet.png';
@@ -38,9 +38,9 @@ class User extends Component {
                 {dataMetamask ?
                     <Button type="primary" onClick={this.onOk}>
                         {dataMetamask.accounts[0]}
-                    </Button>:
+                    </Button> :
                     <Button type="primary" onClick={this.onOk}>
-                         Connect Wallets
+                        Connect Wallets
                     </Button>
                 }
 
@@ -54,29 +54,33 @@ class User extends Component {
                     <div className="header-modal-user">
                         <img src={logoDrawer} />
                         <p>Connect Wallet</p>
-                        <h1>To start using Compound</h1>
+                        <h1>To start using Nis</h1>
                     </div>
                     <Spin spinning={loading} style={{ maxHeight: "100vh" }} size="large">
                         <div className="body-modal-user">
-                            <NavLink to="#">
-                                <div className="btn-body">
-                                    <span><img src={logoCoinbase} /></span>
-                                    <span className="coin-name">Coinbase Wallet</span>
-                                    <i><ArrowRightOutlined /></i>
-                                </div>
-                            </NavLink>
-                            <NavLink to="#">
-                                <div className="btn-body">
-                                    <span><img src={logoLedger} /></span>
-                                    <span className="coin-name">Ledger</span>
-                                    <i><ArrowRightOutlined /></i>
-                                </div>
-                            </NavLink>
                             <LoginMetamask />
+                            <Popconfirm placement="top" title="this is Private demo!" okText="Yes">
+                                <NavLink to="#">
+                                    <div className="btn-body">
+                                        <span><img src={logoCoinbase} /></span>
+                                        <span className="coin-name">Coinbase Wallet</span>
+                                        <i><ArrowRightOutlined /></i>
+                                    </div>
+                                </NavLink>
+                            </Popconfirm>
+                            <Popconfirm placement="top" title="this is Private demo!" okText="Yes">
+                                <NavLink to="#">
+                                    <div className="btn-body">
+                                        <span><img src={logoLedger} /></span>
+                                        <span className="coin-name">Ledger</span>
+                                        <i><ArrowRightOutlined /></i>
+                                    </div>
+                                </NavLink>
+                            </Popconfirm>
                         </div>
                     </Spin>
                     <div className="footer-modal-user">
-                        <span>By connecting, I accept Compound's </span>
+                        <span>By connecting, I accept Nis </span>
                         <Link to="#">Terms of Service</Link>
                     </div>
                 </Modal>
