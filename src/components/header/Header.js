@@ -17,9 +17,9 @@ class HeaderComponent extends Component {
             </Header> */}
             <Row {...globalProps.row} className="menu">
                     <Col {...globalProps.col1} className="logo">
-                        <h1>
+                        <a href="https://nisproject.org/">
                             <img src={logo}/>
-                        </h1>
+                        </a>
                     </Col>
                     <Col {...globalProps.col10} className="dashboard-vote">
                         <NavLink to="/" activeClassName="style-active-navlink" exact className="btn-dashboard">Bet List</NavLink>
